@@ -10,11 +10,22 @@ Putting a file in a local private catalogue, without access to http, a model use
 
 .. code-block:: php
 
- if(isset($_POST['upload'])){
-    $fileStorage = new \Dframe\FileStorage\Storage($this->loadModel('FileStorage/Drivers/DatabaseDriver'));
-    $put = $fileStorage->put('local', $_FILES['file']['tmp_name'], 'images/path/name.'.$extension);
-    if($put['return'] == true)
-       exit(json_encode(array('return' => '1', 'response' => 'File Upload OK')));
+ if (isset($_POST['upload'])) {
+ 
+     $FileStorage = new \Dframe\FileStorage\Storage($this->loadModel('FileStorage/Drivers/DatabaseDriver'));
+     $put = $FileStorage->put('local', $_FILES['file']['tmp_name'], 'images/path/name.'.$extension);
+     if ($put['return'] == true) { 
+         exit(json_encode(array('return' => '1', 'response' => 'File Upload OK')));
+         
+     } elseif($put['return'] == false) {
+    
+         //I know file exist, try put forced
+         $put = $FileStorage->put('local', $_FILES['file']['tmp_name'], 'images/path/name.'.$extension, true);
+         if ($put['return'] == true) {
+             exit(json_encode(array('return' => '1', 'response' => 'File Upload forced method')));
+         } 
+         
+     }
            
     exit(json_encode(array('return' => '0', 'response' => 'Error')));
  }
@@ -26,7 +37,7 @@ In order to read an image, we can do it in two ways. If the file was uploaded pr
 
 .. code-block:: php
 
- exit($fileStorage->renderFile('images/path/name/screenshot.jpg', 'local'));
+ exit($FileStorage->renderFile('images/path/name/screenshot.jpg', 'local'));
 This code will return the original file to us, no matter if it's .jpg or .pdf
 
 Image Processing
@@ -36,5 +47,5 @@ The library has an additional feature of real-time image processing, thanks to t
 
 .. code-block:: php
 
- echo $fileStorage->image('images/path/name/screenshot.jpg')->stylist('square')->size('250x250')->display();
+ echo $FileStorage->image('images/path/name/screenshot.jpg')->stylist('square')->size('250x250')->display();
 After processing, a link to a rendered image of 250x250 size will be returned.
