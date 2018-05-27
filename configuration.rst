@@ -1,3 +1,10 @@
+.. title:: Filestorage - Storage system
+
+.. meta::
+    :description: Filestorage - storage driver and storage location - dframeframework.com
+    :keywords: dframe, filestorage, configuration, php, php7, local storage, stylist image, images, uploads 
+
+
 A library used for supporting files of any kind. The system is based on the basic method of file upload and reading. A few additional methods make this method convenient in use, ex. a mechanism that prevents you from accidentally overwriting a file. System will inform you that there's already a file like that in a given location. 
 The way of storing image information can be any. It can be the usual file_exist or mysql.  An additional feature of the library is the fact that you can save the files in anyway (ftp, local, NullAdapter) through league/fliesystem, or create your own adapters.
 
