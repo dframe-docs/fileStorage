@@ -4,14 +4,24 @@
     :description: Filestorage - storage driver and storage location - dframeframework.com
     :keywords: dframe, filestorage, configuration, php, php7, local storage, stylist image, images, uploads 
 
-
 A library used for supporting files of any kind. The system is based on the basic method of file upload and reading. A few additional methods make this method convenient in use, ex. a mechanism that prevents you from accidentally overwriting a file. System will inform you that there's already a file like that in a given location. 
 The way of storing image information can be any. It can be the usual file_exist or mysql.  An additional feature of the library is the fact that you can save the files in anyway (ftp, local, NullAdapter) through league/fliesystem, or create your own adapters.
+
+Instalation
+----------
+
+From console level, launch the command composer* 
+
+.. code-block:: bash
+
+ $ composer require dframe/filestorage
+
+Or download manual https://github.com/dframe/filestorage/releases
 
 Dframe/fileStorage is an addition to the system mentioned above, thanks to which it's ready to use in any system after setting the config and the driver.
 
 Upload
-^^^^^^^^^
+----------
 
 Putting a file in a local private catalogue, without access to http, a model used for that is available here. The example below shows receiving an image from a php site through a form.
 
@@ -38,7 +48,7 @@ Putting a file in a local private catalogue, without access to http, a model use
  }
  
 Reading
-^^^^^^^^^^^^
+----------
 
 In order to read an image, we can do it in two ways. If the file was uploaded privately, without http access, we have to create controller that will download it and show it. For that, we have the code below.
 
