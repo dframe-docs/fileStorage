@@ -65,4 +65,13 @@ The library has an additional feature of real-time image processing, thanks to t
 .. code-block:: php
 
  echo $FileStorage->image('images/path/name/screenshot.jpg')->stylist('square')->size('250x250')->display();
+ 
 After processing, a link to a rendered image of 250x250 size will be returned.
+
+Return array
+
+.. code-block:: php
+
+ echo $FileStorage->image('images/path/name/screenshot.jpg')->stylist('square')->size('250x250')->get();
+ 
+
