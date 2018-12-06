@@ -23,7 +23,8 @@ Dframe/fileStorage is an addition to the system mentioned above, thanks to which
 Upload
 ----------
 
-Putting a file in a local private catalogue, without access to http, a model used for that is available here. The example below shows receiving an image from a php site through a form.
+Putting a file in a local private catalogue, without access to http, a model used for that is available `here
+<https://github.com/dframe/fileStorage/blob/master/examples/example1/app/Model/FileStorage/Drivers/DatabaseDriver.php>`_. The example below shows receiving an image from a php site through a form.
 
 .. code-block:: php
 
