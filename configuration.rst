@@ -56,10 +56,11 @@ In order to read an image, we can do it in two ways. If the file was uploaded pr
 .. code-block:: php
 
  exit($FileStorage->renderFile('images/path/name/screenshot.jpg', 'local'));
+ 
 This code will return the original file to us, no matter if it's .jpg or .pdf
 
 Image Processing
-^^^^^^^^^^^^^^
+----------
 
 The library has an additional feature of real-time image processing, thanks to the possibility of adding our own driver and ability to process our image in any way.
 
