@@ -65,7 +65,7 @@ Configuration
  ]);
      
 
-Driver here you have example driver `DatabaseDriver <https://github.com/dframe/fileStorage/blob/master/examples/example1/app/Model/FileStorage/Drivers/DatabaseDriver.php>`_
+Driver here you have example driver `Database Driver <https://github.com/dframe/fileStorage/blob/master/examples/example1/app/Model/FileStorage/Drivers/DatabaseDriver.php>`_
 
 And here is empty driver
 
