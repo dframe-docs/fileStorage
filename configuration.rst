@@ -42,18 +42,34 @@ Configuration
  // Decorate the adapter
  $cacheAdapter = new CachedAdapter(new Local(__DIR__ . '/public_html/cache'), $cacheStore);
  
+ // FTP Adapter
+ $ftpCdn = new Filesystem(new League\Flysystem\Adapter\Ftp([
+    'host' => 'ftp.hostname',
+    'username' => 'ftp.username',
+    'password' => 'ftp.password',
+
+    /** optional config settings */
+    'port' => 21,
+    'root' => '/',
+    'passive' => true,
+    'ssl' => true,
+    'timeout' => 30,
+    'ignorePassiveAddress' => false,
+]));
 
  $config = [
      'pluginsDir' => __DIR__ . '/plugins',
      'adapters' => [
          'local' => new Filesystem($localAdapter),
          'cache' => new Filesystem($cacheAdapter), 
+         'ftp' => $ftpCdn
      ],
      'cache' => [
          'life' => 600 // in seconds
      ],
      'publicUrls' => [
-         'local' => ''
+         'local' => '',
+         'ftp' => 'cache.domain'
      ]
  ];
 
