@@ -55,7 +55,7 @@ Configuration
     'ssl' => true,
     'timeout' => 30,
     'ignorePassiveAddress' => false,
-]));
+ ]));
 
  $config = [
      'pluginsDir' => __DIR__ . '/plugins',
